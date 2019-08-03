@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Exercício 04</title>
+</head>
+
+<body>
+  <ul></ul>
+
+  <input type="text" name="nome">
+
+  <button onclick="adicionar()">Adicionar</button>
+
+  <script>
+    var nomes = [];
+    var listElement = document.querySelector('ul');
+    var inputElement = document.querySelector('input');
+   
+    function adicionar() {
+      addItem(inputElement.value);
+      if (inputElement.value == "") {
+          return alert("Preencha o nome")
+      } 
+      else{
+        for (nome of nomes) {
+            addItem(nome);
+       }
+      }
+    }
+    function addItem(text) {
+      var liElement = document.createElement('li');
+      var textElement = document.createTextNode(text);
+      liElement.appendChild(textElement);
+      listElement.appendChild(liElement);
+    }
+  </script>
+</body>
+
+</html>
