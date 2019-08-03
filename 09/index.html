@@ -8,26 +8,27 @@
 <body>
   <ul></ul>
 
-  <input type="text" name="nome">
+  <input type="text" name="nome" onfocus="this.value=''">
 
-  <button onclick="adicionar()">Adicionar</button>
+  <button onclick="adicionar()"  >Adicionar</button>
+  <button onclick="apagaForm()"> apagar</button>
 
   <script>
     var nomes = [];
     var listElement = document.querySelector('ul');
     var inputElement = document.querySelector('input');
-   
+
     function adicionar() {
       addItem(inputElement.value);
       if (inputElement.value == "") {
-          return alert("Preencha o nome")
-      } 
-      else{
+        return alert("Preencha o nome")
+      } else {
         for (nome of nomes) {
-            addItem(nome);
-       }
+          addItem(nome);
+        }
       }
     }
+
     function addItem(text) {
       var liElement = document.createElement('li');
       var textElement = document.createTextNode(text);
